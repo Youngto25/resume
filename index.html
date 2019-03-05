@@ -15,7 +15,7 @@
     </head>
   <body>
     <div class="topNavBar">
-     <div class=topNavBar-inner clearfix><!--clearfix可以解决float所造成的已知的bug-->
+     <div class="topNavBar-inner clearfix"><!--clearfix可以解决float所造成的已知的bug-->
       <a class="logo" href="#" alt="logo" style="float:left;"><!--浮动，表明元素必须浮动在其所在的块容器左侧的关键字-->
         <span class="rs">RS</span><span class="card">card</span>
        </a>
@@ -91,27 +91,70 @@
     </a>       
       </footer>
       </div>
-      <a class="button" href="#">下载PDF简历</a>
-      <p>
+      <p class="downlocadResume-wrapper">
+        <a class="downloadResume" href="./resume.pdf" target="_blank" download>下载PDF简历</a>
+      </p>
+      <p class="introduce">
         方应杭， 资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。<br>
         技能：前端开发，Rails 开发，Node.js 开发
       </p>
     </main>
-    <section>
+    <section class="skills">
       <h2>技能</h2>
-      <ol>
-        <li>HTML 5 &amp; CSS 3</li>
-        <li>JavaScript</li>
-        <li>jQuery</li>
-        <li>Vue</li>
-        <li>React</li>
-        <li>HTTP</li>
+      <ol class="clearfix">
+        <li>
+          <h3>
+              HTML 5 &amp; CSS 3
+          </h3>
+          <div class="progressBar">
+            <div class="progress"></div>
+          </div>
+        </li>
+        <li>
+            <h3>
+                JavaScript
+            </h3>
+            <div class="progressBar">
+              <div class="progress"></div>
+            </div>
+          </li>
+          <li>
+              <h3>
+                  jQuery
+              </h3>
+              <div class="progressBar">
+                <div class="progress"></div>
+              </div>
+            </li>
+            <li>
+                <h3>
+                    Vue
+                </h3>
+                <div class="progressBar">
+                  <div class="progress"></div>
+                </div>
+              </li>
+              <li>
+                  <h3>
+                      React
+                  </h3>
+                  <div class="progressBar">
+                    <div class="progress"></div>
+                  </div>
+                </li>
+                <li>
+                    <h3>
+                        HTTP
+                    </h3>
+                    <div class="progressBar">
+                      <div class="progress"></div>
+                    </div>
       </ol>
     </section>
     <section>
       <h2>作品集</h2>
       <nav>
-        <ol>
+        <ol class="clearfix;">
           <li>所有</li>
           <li>框架</li>
           <li>原生JS&amp;CSS</li>

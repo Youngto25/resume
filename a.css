@@ -20,8 +20,15 @@
     border-top: 1px solid #dedede;
   }
 
+  h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+  }
 
-  .topNavBar a{
+  ul,ol{
+    list-style: none;
+  }
+
+  a{
     text-decoration: none;/*去除下划线、继承body的颜色*/
     color:inherit;
   }
@@ -111,6 +118,7 @@
     margin-left: auto;
     margin-right: auto;
     background-color: #ffffff;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
   }
 
   .userCard .welcome{
@@ -195,6 +203,93 @@
     height: 30px;
     fill: white;
     vertical-align:top;
+  }
+
+  body>main{
+    margin-top: -350px;
+  }
+
+  body>main .downlocadResume-wrapper{
+    text-align: center;
+  }
+
+  body>main .downloadResume{
+    border: 1px solid #cdcfd1;
+    background: #efefef;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 21px 55px;
+    display: inline-block;
+    border-radius: 2px;
+    color: #3d4451;
+    font-weight: bold;
+    margin: 32px 0;
+    transition: box-shadow 0.2s;
+  }
+
+  body> main .downloadResume:hover{
+    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.5);
+  }
+
+  body >main .introduce{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", Times, sans-serif;
+    font-size: 18px;
+  }
+
+  section.skills{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+  }
+
+  section.skills>h2{
+    text-align: center;
+    color: #3d4451;
+    font-size:34px;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  section.skills>h3{
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+  }
+
+  section.skills>ol{
+    background: white;
+    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.5);
+    padding: 42px 50px 10px;
+    margin-top: 30px;
+  }
+
+  section.skills >ol >li{
+    float: left;
+    width: 48%;
+    box-sizing: border-box;
+  }
+
+  section.skills >ol >li:nth-child(even){
+    float: right;
+  }
+
+  section.skills .progressBar{
+    height: 3px;
+    background: #fae1e1;
+    border-radius: 2px;
+    margin: 4px 0 40px;
+  }
+
+  section.skills .progressBar .progress{
+    height: 3px;
+    background: #e6686a;
+    width: 70%;
+    border-radius: 2px;
   }
   
   .test1{
