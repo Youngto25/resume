@@ -107,7 +107,7 @@
               HTML 5 &amp; CSS 3
           </h3>
           <div class="progressBar">
-            <div class="progress"></div>
+            <div class="progress" style="width: 80%"></div>
           </div>
         </li>
         <li>
@@ -115,7 +115,7 @@
                 JavaScript
             </h3>
             <div class="progressBar">
-              <div class="progress"></div>
+              <div class="progress" style="width: 20%"></div>
             </div>
           </li>
           <li>
@@ -151,24 +151,40 @@
                     </div>
       </ol>
     </section>
-    <section>
+    <section class="portfolio">
       <h2>作品集</h2>
       <nav>
         <ol class="clearfix;">
-          <li>所有</li>
-          <li>框架</li>
-          <li>原生JS&amp;CSS</li>
+          <li id="portfolio1">所有</li>
+          <li id="portfolio2">框架</li>
+          <li id="portfolio3">原生JS&amp;CSS</li>
         </ol>
+        <div id="portfolioBar" class="bar state-1">
+          <div class="bar-inner"></div>
+        </div>
       </nav>
-      <div class="jobs">
-        <div class="big"></div>
-        <div class="small"></div>
-        <div class="small"></div>
-      </div>
+      <script>
+        portfolio1.onclick= function(){
+          portfolioBar.className= 'bar state-1'
+        }
+        portfolio2.onclick= function(){
+          portfolioBar.className= 'bar state-2'
+        }
+        portfolio3.onclick= function(){
+          portfolioBar.className= 'bar state-3'
+        }
+      </script>
+      <div class="works" style="height: 597px;">
+          <div class="big" style="top: 0; left: 0;">
+            <img src="./picture/1.jpg" alt="作品1">
+          </div>
+          <div class="small" style="top: 0; left: 645px;">
+            <img src="./picture/2.jpg" alt="作品2">
+          </div>
+          <div class="small" style="top: 312px; left: 645px;">
+            <img src="./picture/3.jpg" alt="作品3">
+          </div>
+        </div>
     </section>
-    <div class="test">
-      name
-    </div>
-    <span class="test1"></span>
   </body>
 </html>
