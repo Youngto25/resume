@@ -95,17 +95,12 @@
   .topNavBar .logo .card{
     color:#9a9da2;
   }
-
-  .test{
-    font-size:14px;
-    line-height:30px;
-  }
  
   .banner{
     height: 515px;
-    background-image:url(./picture/rs-cover.jpg); 
-    background-position: center center;
-    background-size: cover;
+    background-image:url(./picture/rs-cover.jpg); /*添加背景图片*/
+    background-position: center;
+    background-size: cover;/*背景图片适应*/
   }
 
   .banner .mask{
@@ -118,7 +113,7 @@
     margin-left: auto;
     margin-right: auto;
     background-color: #ffffff;
-    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);/*添加阴影*/
   }
 
   .userCard .welcome{
@@ -135,7 +130,7 @@
     border: 10px solid transparent;
     width: 0px;
     /*border-left-color: e6686a;*/
-    border-left-color: #e6686a;
+    border-left-color: #e6686a;/*三角形*/
     border-top-width: 0px;
     position: absolute;
     left: 4px;
@@ -190,11 +185,11 @@
     width: 40px;
     line-height: 30px;
     padding: 5px 0;
-    border-radius: 50%;
+    border-radius: 50%;/*圆*/
     margin: 16px;
   }
 
-  .userCard > footer.media > a:hover{
+  .userCard > footer.media > a:hover{/*触发*/
     background-color: #cf5d5f;
   }
 
@@ -224,7 +219,7 @@
     color: #3d4451;
     font-weight: bold;
     margin: 32px 0;
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s;/*阴影0.2秒显示*/
   }
 
   body> main .downloadResume:hover{
@@ -277,7 +272,7 @@
     box-sizing: border-box;
   }
 
-  section.skills >ol >li:nth-child(even){
+  section.skills >ol >li:nth-child(even){/*偶数float:right*/
     float: right;
   }
 
@@ -317,7 +312,7 @@
     cursor: pointer;
   }
 
-  section.portfolio >nav >ol >li:nth-child(1){
+  section.portfolio >nav >ol >li:nth-child(1){/*第一个浮动左边margin-left:0*/
     margin-left: 0;
   }
 
