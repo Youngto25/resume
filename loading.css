@@ -1,8 +1,8 @@
 .site-welcome {}
 
 .loading {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     position: relative;
 }
 
@@ -10,6 +10,8 @@
 .loading::after {
     content: '';
     position: absolute;
+    width: 0px;
+    height: 0px;
     background: black;
     border-radius: 50%;
     left: 0;
