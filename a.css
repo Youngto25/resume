@@ -397,6 +397,7 @@ section.skills.offset .progress {
 
 section.portfolio {
     text-align: center;
+    margin-bottom: 100px;
 }
 
 section.portfolio>nav {
