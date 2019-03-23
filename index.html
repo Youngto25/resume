@@ -86,7 +86,7 @@
         <div class="mask"></div>
     </div>
     <main>
-        <div id="siteAbout" class="userCard">
+        <div data-x id="siteAbout" class="userCard">
             <div class="pictureAndText clearfix">
                 <div class="picture">
                     <img src="./picture/avatar.jpg" alt="头像" />
@@ -156,7 +156,7 @@
             Blake， 前端工程师，现在在饥人谷教前端课程。<br> 熟悉JavaScript编程，熟练掌握ES6新特性，了解ES7部分新特性 对JavaScript 函数式编程和JavaScript面向对象编程有一定理解 熟练掌握React、Vue等前端框架
         </p>
     </main>
-    <section id="siteSkills" class="skills">
+    <section data-x id="siteSkills" class="skills">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -208,7 +208,7 @@
                 </div>
         </ol>
     </section>
-    <section id="siteWorks" class="portfolio">
+    <section data-x id="siteWorks" class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix;">
@@ -244,25 +244,60 @@
         </div>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
     <script>
         setTimeout(function() {
             siteWelcome.classList.remove('active') //使用延迟
-        }, 1000);
-        setTimeout
+        }, 100);
+
+        let specialTags = document.querySelectorAll('[data-x]')
+        for (let i = 0; i < specialTags.length; i++) {
+            //给拥有data-x的标签添加一个class，此class的作用是让元素脱离
+            specialTags[i].classList.add('offset')
+        }
+        setTimeout(function() {
+            yang()
+        }, 250)
         window.onscroll = function() {
-                if (window.scrollY) {
-                    topNavBar.classList.add('sticky')
-                } else {
-                    topNavBar.classList.remove('sticky')
+            if (window.scrollY) {
+                topNavBar.classList.add('sticky')
+            } else {
+                topNavBar.classList.remove('sticky')
+            }
+            yang()
+        }
+
+        function yang() {
+            let specialTags = document.querySelectorAll('[data-x]')
+            let minIndex = 0
+            for (let i = 1; i < specialTags.length; i++) {
+                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+                    minIndex = i
                 }
             }
-            /*此时通过判断是否有menuTriggle来判断是否有菜单栏，但是此时造成
-            没有此class的li标签active不能触发，所以为了避免bug，我在各li标签
-            上都加上menuTriggle*/
-            /*
-            let aTags = document.querySelectorAll('nav.menu > ul > li > a')
-            也可以在nav上声明class menu,一旦有a标签就可以触发active
-            */
+            specialTags[minIndex].classList.remove('offset')
+            let id = specialTags[minIndex].id
+            console.log(id)
+                //注意这边的双引号
+            let a = document.querySelector('a[href="#' + id + '"]')
+            console.log(a)
+                //找到a标签的父节点
+            let li = a.parentNode
+            console.log(li)
+            let brothersAndMe = li.parentNode.children
+            for (let i = 0; i < brothersAndMe.length; i++) {
+                brothersAndMe[i].classList.remove('highlight')
+            }
+            li.classList.add('highlight')
+        }
+
+        /*此时通过判断是否有menuTriggle来判断是否有菜单栏，但是此时造成
+        没有此class的li标签active不能触发，所以为了避免bug，我在各li标签
+        上都加上menuTriggle*/
+        /*
+        let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+        也可以在nav上声明class menu,一旦有a标签就可以触发active
+        */
         let liTags = document.getElementsByClassName('menuTriggle')
         console.log(liTags)
         for (let i = 0; i < liTags.length; i++) {
@@ -294,6 +329,14 @@
         }
         let aTags = document.querySelectorAll('div.topNavBar-inner >nav >ul >li >a')
         console.log(aTags)
+
+        function animate(time) {
+            requestAnimationFrame(animate);
+            TWEEN.update(time);
+        }
+        requestAnimationFrame(animate);
+
+
         for (let i = 0; i < aTags.length; i++) {
             aTags[i].onclick = function(x) {
                 //重要语句,阻止a标签默认动作
@@ -306,8 +349,41 @@
                     //console.log(a.href)所得值是被浏览器修改过的url
                 let element = document.querySelector(href)
                     //debugger  断点，debug
-                let top = element.offsetTop //取得距离
-                window.scrollTo(0, top - 75)
+                let top = element.offsetTop //取得像素
+                let n = 25
+                let duration = 500 / n //多长时间动一次
+                let currentTop = window.scrollY
+                let targetTop = top - 75
+                let s = targetTop - currentTop
+                var coords = {
+                    y: currentTop
+                };
+                var t = Math.abs((s / 100) * 300)
+                if (t > 500) {
+                    t = 500
+                }
+                var tween = new TWEEN.Tween(coords)
+                    .to({
+                        y: targetTop
+                    }, 1000)
+                    .easing(TWEEN.Easing.Quadratic.In)
+                    .onUpdate(function() {
+                        window.scrollTo(0, coords.y)
+                    })
+                    .start();
+                /*此种方法实现的效果是线性的，过于僵硬
+                let distance = (targetTop - currentTop) / n
+                console.log(distance)
+                let i = 0
+                let id = setInterval(() => {
+                    if (i === n) {
+                        window.clearInterval(id)
+                        return
+                    }
+                    i = i + 1
+                    window.scrollTo(0, currentTop + distance * i)
+                }, duration)
+                */
             }
         }
     </script>

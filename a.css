@@ -40,6 +40,24 @@ a {
     color: inherit;
 }
 
+[data-x].offset {
+    transform: translateY(100px);
+}
+
+[data-x] {
+    transform: translate(0);
+    transform: all 0.5s
+}
+
+@keyframes slidUp {
+    0% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .topNavBar {
     /*padding-top:24px;
     padding-bottom:24px;
@@ -100,7 +118,8 @@ a {
     position: relative;
 }
 
-.topNavBar nav>ul>li.active>a::after {
+.topNavBar nav>ul>li.active>a::after,
+.topNavBar nav>ul>li.highlight>a::after {
     /*触发效果，当鼠标放到导航上会有一个3px的线段出现*/
     content: '';
     display: block;
@@ -359,6 +378,8 @@ section.skills .progressBar {
     background: #fae1e1;
     border-radius: 2px;
     margin: 4px 0 40px;
+    /* 防止溢出*/
+    overflow: hidden;
 }
 
 section.skills .progressBar .progress {
@@ -366,6 +387,12 @@ section.skills .progressBar .progress {
     background: #e6686a;
     width: 70%;
     border-radius: 2px;
+    transform: translateX(0);
+    transition: all 1s;
+}
+
+section.skills.offset .progress {
+    transform: translateX(-100%)
 }
 
 section.portfolio {
