@@ -255,27 +255,32 @@
             //给拥有data-x的标签添加一个class，此class的作用是让元素脱离
             specialTags[i].classList.add('offset')
         }
+        /*此功能是animatie when scroll，当滚动页面时，特殊地方会突然弹出，以下这段代码
+        是令userCard在页面打开时自动弹出*/
         setTimeout(function() {
-            yang()
-        }, 250)
+                yang()
+            }, 250) //延迟0.25秒弹出
         window.onscroll = function() {
             if (window.scrollY) {
                 topNavBar.classList.add('sticky')
             } else {
                 topNavBar.classList.remove('sticky')
             }
-            yang()
+            yang() //当页面滚动时触发
         }
 
         function yang() {
             let specialTags = document.querySelectorAll('[data-x]')
             let minIndex = 0
             for (let i = 1; i < specialTags.length; i++) {
+                //找到离上端最近的节点
                 if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
                     minIndex = i
                 }
             }
+            //当滚动且触发minIndex时，去除offset样式，此时内容会弹出
             specialTags[minIndex].classList.remove('offset')
+                //找到minIndex的Id，此时根据Id来找到此节点，后找到父节点，并添加样式
             let id = specialTags[minIndex].id
             console.log(id)
                 //注意这边的双引号
@@ -286,6 +291,7 @@
             console.log(li)
             let brothersAndMe = li.parentNode.children
             for (let i = 0; i < brothersAndMe.length; i++) {
+                //为了解决滚动到下个节点时前一个标签还高亮的bug，在添加样式之前先去除之前的高亮样式
                 brothersAndMe[i].classList.remove('highlight')
             }
             li.classList.add('highlight')
@@ -354,6 +360,7 @@
                 let duration = 500 / n //多长时间动一次
                 let currentTop = window.scrollY
                 let targetTop = top - 75
+                    //为了更加平滑的滚动，引入了tween.js，缓动
                 let s = targetTop - currentTop
                 var coords = {
                     y: currentTop

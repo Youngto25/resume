@@ -45,17 +45,8 @@ a {
 }
 
 [data-x] {
-    transform: translate(0);
+    transform: translateY(0);
     transform: all 0.5s
-}
-
-@keyframes slidUp {
-    0% {
-        transform: translateY(-30px);
-    }
-    100% {
-        transform: translateY(0);
-    }
 }
 
 .topNavBar {
