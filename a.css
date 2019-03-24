@@ -1,5 +1,5 @@
 .clearfix::after {
-    content: '';
+    content: "";
     display: block;
     clear: both;
 }
@@ -62,7 +62,7 @@ a {
     padding: 20px 0px 20px 0px;
     transition: all 0.5s;
     z-index: 1;
-    color: #B7B7B7;
+    color: #b7b7b7;
 }
 
 .topNavBar.sticky {
@@ -112,7 +112,7 @@ a {
 .topNavBar nav>ul>li.active>a::after,
 .topNavBar nav>ul>li.highlight>a::after {
     /*触发效果，当鼠标放到导航上会有一个3px的线段出现*/
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 100%;
@@ -383,7 +383,7 @@ section.skills .progressBar .progress {
 }
 
 section.skills.offset .progress {
-    transform: translateX(-100%)
+    transform: translateX(-100%);
 }
 
 section.portfolio {
