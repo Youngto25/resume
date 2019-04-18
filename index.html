@@ -3,6 +3,7 @@
 
 <head>
     <title>我的简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
     <link rel="stylesheet" href="./loading.css">
     <link rel="stylesheet" href="./a.css">
     <script src="//at.alicdn.com/t/font_1068681_90cislzlgci.js"></script>
@@ -14,11 +15,11 @@
             fill: currentColor;
             overflow: hidden;
         }
-        
+
         .site-welcome {
             display: none;
         }
-        
+
         .site-welcome.active {
             display: flex;
             position: fixed;
@@ -93,7 +94,7 @@
                 </div>
                 <div class="text">
                     <span class="welcome">Hello
-            <span class="triangle"></span>
+                        <span class="triangle"></span>
                     </span>
                     <!--注意此处.welcome将.triangle给包了起来-->
                     <h1>Blake</h1>
@@ -119,33 +120,33 @@
                 <!--a[href=#]*7>img[src=#][alt="..."]-->
                 <a>
                     <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-github"></use>
-          </svg>
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
                 </a>
                 <a>
                     <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-weibo"></use>
-          </svg>
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
                 </a>
                 <a>
                     <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-CN_jianshu"></use>
-          </svg>
+                        <use xlink:href="#icon-CN_jianshu"></use>
+                    </svg>
                 </a>
                 <a>
                     <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-weixin"></use>
-          </svg>
+                        <use xlink:href="#icon-weixin"></use>
+                    </svg>
                 </a>
                 <a>
                     <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-twitter"></use>
-          </svg>
+                        <use xlink:href="#icon-twitter"></use>
+                    </svg>
                 </a>
                 <a>
                     <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-facebook"></use>
-          </svg>
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
                 </a>
             </footer>
         </div>
@@ -153,7 +154,8 @@
             <a class="downloadResume" href="./resume.pdf" target="_blank" download>下载PDF简历</a>
         </p>
         <p class="introduce">
-            Blake， 前端工程师，现在在饥人谷教前端课程。<br> 熟悉JavaScript编程，熟练掌握ES6新特性，了解ES7部分新特性 对JavaScript 函数式编程和JavaScript面向对象编程有一定理解 熟练掌握React、Vue等前端框架
+            Blake， 前端工程师，现在在饥人谷教前端课程。<br> 熟悉JavaScript编程，熟练掌握ES6新特性，了解ES7部分新特性 对JavaScript 函数式编程和JavaScript面向对象编程有一定理解
+            熟练掌握React、Vue等前端框架
         </p>
     </main>
     <section data-x id="siteSkills" class="skills">
@@ -221,13 +223,13 @@
             </div>
         </nav>
         <script>
-            portfolio1.onclick = function() {
+            portfolio1.onclick = function () {
                 portfolioBar.className = 'bar state-1'
             }
-            portfolio2.onclick = function() {
+            portfolio2.onclick = function () {
                 portfolioBar.className = 'bar state-2'
             }
-            portfolio3.onclick = function() {
+            portfolio3.onclick = function () {
                 portfolioBar.className = 'bar state-3'
             }
         </script>
@@ -244,9 +246,30 @@
         </div>
     </section>
 
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
     <script>
-        setTimeout(function() {
+        setTimeout(function () {
             siteWelcome.classList.remove('active') //使用延迟
         }, 100);
 
@@ -257,10 +280,10 @@
         }
         /*此功能是animatie when scroll，当滚动页面时，特殊地方会突然弹出，以下这段代码
         是令userCard在页面打开时自动弹出*/
-        setTimeout(function() {
-                yang()
-            }, 250) //延迟0.25秒弹出
-        window.onscroll = function() {
+        setTimeout(function () {
+            yang()
+        }, 250) //延迟0.25秒弹出
+        window.onscroll = function () {
             if (window.scrollY) {
                 topNavBar.classList.add('sticky')
             } else {
@@ -280,13 +303,13 @@
             }
             //当滚动且触发minIndex时，去除offset样式，此时内容会弹出
             specialTags[minIndex].classList.remove('offset')
-                //找到minIndex的Id，此时根据Id来找到此节点，后找到父节点，并添加样式
+            //找到minIndex的Id，此时根据Id来找到此节点，后找到父节点，并添加样式
             let id = specialTags[minIndex].id
             console.log(id)
-                //注意这边的双引号
+            //注意这边的双引号
             let a = document.querySelector('a[href="#' + id + '"]')
             console.log(a)
-                //找到a标签的父节点
+            //找到a标签的父节点
             let li = a.parentNode
             console.log(li)
             let brothersAndMe = li.parentNode.children
@@ -307,28 +330,28 @@
         let liTags = document.getElementsByClassName('menuTriggle')
         console.log(liTags)
         for (let i = 0; i < liTags.length; i++) {
-            liTags[i].onmouseenter = function(x) {
+            liTags[i].onmouseenter = function (x) {
                 //此时取得正在监听的标签，若是x.target则是取得正在操作的标签，注意两者区别
                 x.currentTarget.classList.add('active')
-                    /*
-                    let brother = a.nextSibling
-                        //nodeType，判断当前是什么类型
-                    while (brother.tagName !== 'UL') {
-                        brother = brother.nextSibling
-                    }
-                    console.log(brother)
-                    */
+                /*
+                let brother = a.nextSibling
+                    //nodeType，判断当前是什么类型
+                while (brother.tagName !== 'UL') {
+                    brother = brother.nextSibling
+                }
+                console.log(brother)
+                */
 
             }
-            liTags[i].onmouseleave = function(x) {
+            liTags[i].onmouseleave = function (x) {
                 x.currentTarget.classList.remove('active')
-                    /*
-                    let brother = a.nextSibling
-                    while (brother.tagName !== 'UL') {
-                        brother = brother.nextSibling
-                    }
-                    console.log('mouseleave')
-                    */
+                /*
+                let brother = a.nextSibling
+                while (brother.tagName !== 'UL') {
+                    brother = brother.nextSibling
+                }
+                console.log('mouseleave')
+                */
 
 
             }
@@ -344,23 +367,23 @@
 
 
         for (let i = 0; i < aTags.length; i++) {
-            aTags[i].onclick = function(x) {
+            aTags[i].onclick = function (x) {
                 //重要语句,阻止a标签默认动作
                 x.preventDefault()
-                    //console.log('you clicked')
-                    //console.log(x.target)
+                //console.log('you clicked')
+                //console.log(x.target)
                 let a = x.currentTarget
-                    //用户写什么就是什么，不做任何修改
+                //用户写什么就是什么，不做任何修改
                 let href = a.getAttribute('href')
-                    //console.log(a.href)所得值是被浏览器修改过的url
+                //console.log(a.href)所得值是被浏览器修改过的url
                 let element = document.querySelector(href)
-                    //debugger  断点，debug
+                //debugger  断点，debug
                 let top = element.offsetTop //取得像素
                 let n = 25
                 let duration = 500 / n //多长时间动一次
                 let currentTop = window.scrollY
                 let targetTop = top - 75
-                    //为了更加平滑的滚动，引入了tween.js，缓动
+                //为了更加平滑的滚动，引入了tween.js，缓动
                 let s = targetTop - currentTop
                 var coords = {
                     y: currentTop
@@ -374,7 +397,7 @@
                         y: targetTop
                     }, 1000)
                     .easing(TWEEN.Easing.Quadratic.In)
-                    .onUpdate(function() {
+                    .onUpdate(function () {
                         window.scrollTo(0, coords.y)
                     })
                     .start();
@@ -394,6 +417,8 @@
             }
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="./slides.js"></script>
 </body>
 
 </html>
