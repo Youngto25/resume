@@ -212,6 +212,8 @@
     </section>
     <section data-x id="siteWorks" class="portfolio">
         <h2>作品集</h2>
+
+        <!--
         <nav>
             <ol class="clearfix;">
                 <li id="portfolio1">所有</li>
@@ -233,6 +235,9 @@
                 portfolioBar.className = 'bar state-3'
             }
         </script>
+        -->
+
+        <!--
         <div class="works" style="height: 597px;">
             <div class="big" style="top: 0; left: 0;">
                 <img src="./picture/1.jpg" alt="作品1">
@@ -244,28 +249,30 @@
                 <img src="./picture/3.jpg" alt="作品3">
             </div>
         </div>
+        -->
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <img class="swiper-slide" src="./picture/navigation.jpg">
+                <img class="swiper-slide" src="./picture/canvas.jpg">
+                <img class="swiper-slide" src="./picture/slide.jpg">
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+
     </section>
 
-    <!-- Slider main container -->
-    <div class="swiper-container">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            ...
-        </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
 
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
-        <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
     <script>
