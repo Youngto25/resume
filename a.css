@@ -453,6 +453,7 @@ section.portfolio .works>.small {
     position: absolute;
 }
 .swiper-container {
-    width: 600px;
-    height: 300px;
+    width: 888px;
+    height: 666px;
+    margin-top: 40px;
 }
