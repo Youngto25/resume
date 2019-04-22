@@ -127,6 +127,7 @@ a {
     0% {
         width: 0;
     }
+
     100% {
         width: 100%;
     }
@@ -146,6 +147,7 @@ a {
     0% {
         margin-right: 100%;
     }
+
     100% {
         margin-right: 0%;
     }
@@ -452,6 +454,7 @@ section.portfolio .works>.big,
 section.portfolio .works>.small {
     position: absolute;
 }
+
 .swiper-container {
     width: 888px;
     height: 666px;

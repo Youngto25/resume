@@ -312,13 +312,10 @@
             specialTags[minIndex].classList.remove('offset')
             //找到minIndex的Id，此时根据Id来找到此节点，后找到父节点，并添加样式
             let id = specialTags[minIndex].id
-            console.log(id)
             //注意这边的双引号
             let a = document.querySelector('a[href="#' + id + '"]')
-            console.log(a)
             //找到a标签的父节点
             let li = a.parentNode
-            console.log(li)
             let brothersAndMe = li.parentNode.children
             for (let i = 0; i < brothersAndMe.length; i++) {
                 //为了解决滚动到下个节点时前一个标签还高亮的bug，在添加样式之前先去除之前的高亮样式
@@ -335,7 +332,6 @@
         也可以在nav上声明class menu,一旦有a标签就可以触发active
         */
         let liTags = document.getElementsByClassName('menuTriggle')
-        console.log(liTags)
         for (let i = 0; i < liTags.length; i++) {
             liTags[i].onmouseenter = function (x) {
                 //此时取得正在监听的标签，若是x.target则是取得正在操作的标签，注意两者区别
@@ -364,7 +360,6 @@
             }
         }
         let aTags = document.querySelectorAll('div.topNavBar-inner >nav >ul >li >a')
-        console.log(aTags)
 
         function animate(time) {
             requestAnimationFrame(animate);
